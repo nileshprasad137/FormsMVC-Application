@@ -1,0 +1,20 @@
+RewriteEngine On
+#Switch the rewrite engine on to override url 
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+#RewriteCond basically means "execute the next RewriteRule only if this is true". 
+#The !-l path is the condition that the request is not for a link (! means not, -l means link)
+#The !-d path is the condition that the request is not for a directory (! means not, -d means directory)
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+#The RewriteRule basically means that if the request is done that matches ^(.+)$ (matches any URL except the server root), it will be rewritten as 
+#index.php?url=$1 which means a request for ollewill be rewritten as index.php?url=olle.
+
+#QSA means that if there's a query string passed with the original URL, it will be appended to the rewrite (olle?p=1 will be rewritten as 
+#index.php?url=olle&p=1.
+
+#L means if the rule matches, don't process any more RewriteRules below this one.
