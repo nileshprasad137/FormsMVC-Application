@@ -1,0 +1,28 @@
+Generating HCFA claim 1-7 for NILESH SANJAY PRASAD on 2017-04-07 15:43.
+
+Generating HCFA claim 1-8 for NILESH SANJAY PRASAD on 2017-04-07 15:43.
+
+Generating claim 1-7 for NILESH SANJAY PRASAD on 2017-04-07 15:45.
+*** billing facility name in 1000A loop is empty
+*** billing facility name in 2010A loop is empty
+*** Billing facility has no NPI.
+*** Error: Insurance information is missing!
+*** This claim has no charges!
+*** Skipping 2310B because ADMINISTRATOR,ADMINISTRATOR has invalid NPI.
+
+Generating HCFA claim 1-10 for NILESH SANJAY PRASAD on 2017-04-07 18:06.
+
+Generating HCFA claim 1-10 for NILESH SANJAY PRASAD on 2017-04-07 18:06.
+
+Generating HCFA claim 3-12 for SANJAY B PRASAD on 2017-04-13 12:01.
+
+Generating HCFA claim 1-13 for NILESH SANJAY PRASAD on 2017-04-14 18:35.
+
+Generating claim 1-13 for NILESH SANJAY PRASAD on 2017-04-14 18:53.
+*** billing facility name in 1000A loop is empty
+*** billing facility name in 2010A loop is empty
+*** Billing facility has no NPI.
+*** Error: Insurance information is missing!
+*** This claim has no charges!
+*** Skipping 2310B because ADMINISTRATOR,ADMINISTRATOR has invalid NPI.
+
