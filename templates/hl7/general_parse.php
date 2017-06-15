@@ -26,16 +26,16 @@ PV1|1|I|2000^2053^01||||004777^FISHER^BEN^J.|||SUR||||ADM|A0|</td></tr>-->
 <?php if($this->hl7_message_err)?>
 	<tr height="25"><td colspan="2"><?php echo $hl7_message_err;?></td></tr>
         
- <?php if($this->hl7_array){?>
-       
+ <?php if($this->hl7_array){?>       
      <tr class="text"><td colspan="2">
 	<table class="showborder">
                     <?php foreach ($this->hl7_array as $hl7item => $hl7key) {?>
-                        <tr height="25"><td colspan="3"><?php echo $hl7key;?></td></tr>
+                        <tr height="25"><td colspan="3"><?php echo $hl7item;?></td></tr>                      
+                       
                         <?php foreach ($hl7item as $segment_val=> $segment_name) {?>
                             <tr><td>&nbsp;</td><td><?php echo $segment_name;?> : </td><td><?php echo $segment_val;?></td></tr>
                             
-                        <?php }?>;
+                        <?php }?>
                     <?php }?>   
                      </table>
 	</td>
