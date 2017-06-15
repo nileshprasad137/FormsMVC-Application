@@ -71,16 +71,13 @@ class C_Document extends Controller {
 		parent::__construct();
 		$this->documents = array();
 		$this->template_mod = $template_mod;
-		//$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
-                                        $this->form_action = $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
-		//$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "document&");
+		
+                                       $this->form_action = $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];//$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "document&");
 		$this->current_action = $GLOBALS['webroot']."/controller.php?" . "document&";
 		//get global config options for this namespace
 		$this->_config = $GLOBALS['oer_config']['documents'];
-
-		$this->_args = array("patient_id" => $_GET['patient_id']);
+		$this->_args = array("patient_id" => $_GET['patient_id']);	
 		
-		//$this->assign("STYLE", $GLOBALS['style']);
                                        $this->style = $GLOBALS['style'];
 		$t = new CategoryTree(1);
 		//print_r($t->tree);
@@ -89,17 +86,11 @@ class C_Document extends Controller {
 	}
 	
 	function upload_action($patient_id,$category_id) {
-		$category_name = $this->tree->get_node_name($category_id);
-		
-                                       //$this->assign("category_id", $category_id);
-		//$this->assign("category_name", $category_name);
-		//$this->assign("hide_encryption", $GLOBALS['hide_document_encryption'] );
-		//$this->assign("patient_id", $patient_id);
-                                        
-                                            $this->category_id = $category_id;
-                                            $this->category_name = $category_name;
-                                            $this->hide_encryption = $GLOBALS['hide_document_encryption'];
-                                            $this->patient_id = $patient_id;
+		$category_name = $this->tree->get_node_name($category_id);                                        
+                                      $this->category_id = $category_id;
+                                      $this->category_name = $category_name;
+                                      $this->hide_encryption = $GLOBALS['hide_document_encryption'];
+                                      $this->patient_id = $patient_id;
 
     // Added by Rod to support document template download from general_upload.html.
     // Cloned from similar stuff in manage_document_templates.php.
@@ -121,20 +112,14 @@ class C_Document extends Controller {
           "'>" . htmlspecialchars($sfname) . "</option>";
       }
     }
-    //$this->assign("TEMPLATES_LIST", $templates_options);
-    $this->template_list = $templates_options;
-
-    
-/* Be careful here..........................*/    
-		//$activity = $this->fetch($GLOBALS['template_dir'] . "documents/" . $this->template_mod . "_upload.html");
-		//$this->assign("activity", $activity);
-                                        
-                                        ob_start();
-                                        require_once($GLOBALS['template_dir'] . "documents/" . $this->template_mod . "_upload.php");
-                                        $activity = ob_get_clean(); // gets content, discards buffer
-                                        $this->activity = $activity;
-		  return $this->list_action($patient_id);
-	}
+ 
+    $this->template_list = $templates_options;                                        
+    ob_start(); //Start Output Buffering
+    require_once($GLOBALS['template_dir'] . "documents/" . $this->template_mod . "_upload.php");
+    $activity = ob_get_clean(); // gets content, discards buffer
+    $this->activity = $activity;
+    return $this->list_action($patient_id);
+}
 	
 	//Upload multiple files on single click
     function upload_action_process() {
@@ -212,12 +197,10 @@ class C_Document extends Controller {
                     if ($rc) {
                       $error .= $rc . "\n";
                     }
-                    else {
-                      //$this->assign("upload_success", "true");
+                    else {                     
                         $this->upload_sucsess = "true";
                     }
-                    $sentUploadStatus[] = $d;
-                    //$this->assign("file", $sentUploadStatus);
+                    $sentUploadStatus[] = $d;                   
                     $this->file = $sentUploadStatus;
                 }
 
@@ -250,7 +233,7 @@ class C_Document extends Controller {
             }
         }
 
-        //$this->assign("error", nl2br($error));
+       
         $this->error = nl2br($error);
         //$this->_state = false;
         $_POST['process'] = "";
@@ -264,12 +247,14 @@ class C_Document extends Controller {
 			return;
 			
 		$n = new Note();
-                $n->set_owner($_SESSION['authUserID']);
+                                       $n->set_owner($_SESSION['authUserID']);
 		parent::populate_object($n);
 		if ($_POST['identifier'] == "no"){
-                        // associate a note with a document
+                                       // associate a note with a document
 			$n->persist();
-		}elseif ($_POST['identifier'] == "yes"){
+		}
+                                        elseif ($_POST['identifier'] == "yes"){
+                        
                         // send the document via email
                         $d = new Document($_POST['foreign_id']);
                         $url =  $d->get_url();
@@ -345,12 +330,6 @@ class C_Document extends Controller {
 		
 		$notes = $n->notes_factory($doc_id);
 		
-		//$this->assign("file", $d);
-		//$this->assign("web_path", $this->_link("retrieve") . "document_id=" . $d->get_id() . "&");
-		//$this->assign("NOTE_ACTION",$this->_link("note"));
-		//$this->assign("MOVE_ACTION",$this->_link("move") . "document_id=" . $d->get_id() . "&process=true");
-		//$this->assign("hide_encryption", $GLOBALS['hide_document_encryption'] );
-                
                                          $this->file = $d;
                                          $this->web_path = $this->_link("retrieve") . "document_id=" . $d->get_id() . "&";
                                          $this->note_action = $this->_link("note");
@@ -363,19 +342,14 @@ class C_Document extends Controller {
 			$delete_string = "<a href='' class='css_button' onclick='return deleteme(" . $d->get_id() .
 				")'><span><font color='red'>" . xl('Delete') . "</font></span></a>";
 		}
-		//$this->assign("delete_string", $delete_string);
-		//$this->assign("REFRESH_ACTION",$this->_link("list"));
-                                        
-                                         $this->delete_string = $delete_string;
-                                         $this->refresh_action = $this->_link("list");
 		
-		//$this->assign("VALIDATE_ACTION",$this->_link("validate") .	"document_id=" . $d->get_id() . "&process=true");
+                                         $this->delete_string = $delete_string;
+                                         $this->refresh_action = $this->_link("list");		
+		
                                          $this->validate_action = $this->_link("validate") .	"document_id=" . $d->get_id() . "&process=true";
 
 		// Added by Rod to support document date update:
-		//$this->assign("DOCDATE", $d->get_docdate());
-		//$this->assign("UPDATE_ACTION",$this->_link("update") . "document_id=" . $d->get_id() . "&process=true" );
-                                         
+		
                                          $this->docdate = $d->get_docdate();
                                          $this->update_action = $this->_link("update") . "document_id=" . $d->get_id() . "&process=true";
 
@@ -391,13 +365,13 @@ class C_Document extends Controller {
 			$sel = ($irow['id'] == $d->get_list_id()) ? ' selected' : '';
 			$issues_options .= "<option value='" . $irow['id'] . "'$sel>$desc</option>";
 		}
-		//$this->assign("ISSUES_LIST", $issues_options);
+		
                                         $this->issues_list = $issues_options;
 		
 		// For tagging to encounter
 		// Populate the dropdown with patient's encounter list
 		
-                                        //$this->assign("TAG_ACTION",$this->_link("tag") . "document_id=" . $d->get_id() . "&process=true");
+                                       
                                         $this->tag_action = $this->_link("tag") . "document_id=" . $d->get_id() . "&process=true";
 		$encOptions = "<option value='0'>-- " . xlt('Select Encounter') . " --</option>";
 		$result_docs = sqlStatement("SELECT fe.encounter,fe.date,libreehr_postcalendar_categories.pc_catname FROM form_encounter AS fe " .
@@ -408,7 +382,7 @@ class C_Document extends Controller {
 			$encOptions .= "<option value='" . attr($row_result_docs['encounter']) . "' $sel_enc>". oeFormatShortDate(date('Y-m-d', strtotime($row_result_docs['date']))) . "-" . text($row_result_docs['pc_catname'])."</option>";
 		}
 		
-                                        //$this->assign("ENC_LIST", $encOptions);
+                                       
                                         $this->enc_list = $encOptions;
 		
 		//Populate the dropdown with category list
@@ -419,10 +393,10 @@ class C_Document extends Controller {
 			if ($catid < 9 && $catid != 5) continue; // Applying same logic as in new encounter page.
 			$visit_category_list .="<option value='".attr($catid)."'>" . text(xl_appt_category($crow['pc_catname'])) . "</option>\n";
 		}
-		//$this->assign("VISIT_CATEGORY_LIST", $visit_category_list);
+		
                                         $this->visit_category_list = $visit_category_list;
 		 
-		//$this->assign("notes",$notes);
+		
                                         $this->notes =  $notes;
 		
 		$this->_last_node = null;
@@ -432,15 +406,10 @@ class C_Document extends Controller {
 		//pass an empty array because we don't want the documents for each category showing up in this list box
  		$rnode = $this->_array_recurse($this->tree->tree,array());
 		$menu->addItem($rnode);
-		$treeMenu_listbox  = new HTML_TreeMenu_Listbox($menu, array("promoText" => xl('Move Document to Category:')));
+		$treeMenu_listbox  = new HTML_TreeMenu_Listbox($menu, array("promoText" => xl('Move Document to Category:')));		
 		
-		//$this->assign("tree_html_listbox",$treeMenu_listbox->toHTML());
-                                         $this->tree_html_listbox = $treeMenu_listbox->toHTML();
+                                         $this->tree_html_listbox = $treeMenu_listbox->toHTML();	
 		
-		
-                                      /*    Be careful here     */   
-                                      //$activity = $this->fetch($GLOBALS['template_dir'] . "documents/" . $this->template_mod . "_view.html");
-		//$this->assign("activity", $activity);
                                         ob_start();
                                         require_once($GLOBALS['template_dir'] . "documents/" . $this->template_mod . "_view.php");
                                         $activity = ob_get_clean(); // gets content, discards buffer
@@ -702,10 +671,9 @@ class C_Document extends Controller {
 		}
 		else {
 			$messages .= "The repository directory does not exist, it is not a directory or there are not sufficient permissions to access it. '" . $this->config['repository'] . "'\n";	
-		}
+		}		
 		
 		
-		//$this->assign("queue_files",$queue_files);
                                         $this->queue_files = $queue_files;
 		$this->_last_node = null;
 		
@@ -714,12 +682,10 @@ class C_Document extends Controller {
 		//pass an empty array because we don't want the documents for each category showing up in this list box
  		$rnode = $this->_array_recurse($this->tree->tree,array());
 		$menu->addItem($rnode);
-		$treeMenu_listbox  = new HTML_TreeMenu_Listbox($menu, array());
+		$treeMenu_listbox  = new HTML_TreeMenu_Listbox($menu, array());		
 		
-		//$this->assign("tree_html_listbox",$treeMenu_listbox->toHTML());
-                                         $this->tree_html_listbox = $treeMenu_listbox->toHTML();
+                                         $this->tree_html_listbox = $treeMenu_listbox->toHTML();	
 		
-		//$this->assign("messages",nl2br($messages));
                                          $this->messages = nl2br($messages);
 		
                                          //return $this->fetch($GLOBALS['template_dir'] . "documents/" . $this->template_mod . "_queue.html");
@@ -819,8 +785,7 @@ class C_Document extends Controller {
 		  		$error .= "The file could not be succesfully stored, this error is usually related to permissions problems on the storage system.\n";
 		  	}
 		}
-			//$this->assign("messages",$messages);
-                                                        
+			
                                                             $this->messages = $messages;
 			$_POST['process'] = "";
 	}
@@ -862,7 +827,7 @@ class C_Document extends Controller {
 				
 				$messages .= xl('Document moved to patient id','','',' \'') . $new_patient_id  . xl('Failed.','','\' ') . "\n";
 				}
-				//$this->assign("messages",$messages);
+				
                                                                                 $this->messages = $messages;
 				return $this->list_action($patient_id);
 			}
@@ -898,14 +863,14 @@ class C_Document extends Controller {
 		  	}
 
 			$this->_state = false;
-			//$this->assign("messages",$messages);
+			
                                                             $this->messages = $messages;
 			return $this->list_action($patient_id);
 		}
 		
 		$this->_state = false;
-		//$this->assign("messages",$messages);
-                                         $this->messages = $messages;
+		
+                                       $this->messages = $messages;
 		return $this->view_action($patient_id,$document_id);
 	}
 	
@@ -1047,8 +1012,7 @@ class C_Document extends Controller {
 			$messages .= xl('Document date and issue updated successfully') . "<br>";
 		}
 
-		$this->_state = false;
-		//$this->assign("messages", $messages);
+		$this->_state = false;		
                                         $this->messages = $messages;
 		return $this->view_action($patient_id, $document_id);
 	}
