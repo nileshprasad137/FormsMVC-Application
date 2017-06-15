@@ -7,16 +7,28 @@ class C_Pharmacy extends Controller {
 
 	var $template_mod;
 	var $pharmacies;
+                    var $form_action;
+                    var $style;
+                    var $web_root;
+                    var $current_action;
+                    
+                    var $pharmacy;
+        
 
 	function __construct($template_mod = "general") {
 		parent::__construct();
 		$this->pharmacies = array();
 		$this->template_mod = $template_mod;
-		$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
-		$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&pharmacy&");
-		$this->assign("STYLE", $GLOBALS['style']);
-		$this->assign("WEB_ROOT", $GLOBALS['webroot'] );
-		$this->Pharmacy = new Pharmacy();
+		//$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
+		//$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&pharmacy&");
+		//$this->assign("STYLE", $GLOBALS['style']);
+		//$this->assign("WEB_ROOT", $GLOBALS['webroot'] );
+                                        
+                                        $this->form_action = $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
+                                        $this->current_action = $GLOBALS['webroot']."/controller.php?" . "practice_settings&pharmacy&";
+                                        $this->style = $GLOBALS['style'];
+                                        $this->web_root = $GLOBALS['webroot'];
+		  $this->Pharmacy = new Pharmacy();
 	}
 
 	function default_action() {
@@ -35,20 +47,38 @@ class C_Pharmacy extends Controller {
 			$this->pharmacies[0]->set_patient_id($patient_id);
 			$this->pharmacies[0]->set_provider($this->pharmacies[0]->patient->get_provider());
 		}
-		$this->assign("pharmacy", $this->pharmacies[0]);
-		return $this->fetch($GLOBALS['template_dir'] . "pharmacies/" . $this->template_mod . "_edit.html");
+		//$this->assign("pharmacy", $this->pharmacies[0]);
+                                        $this->pharmacy = $this->pharmacies[0];
+                                        
+                                        //return $this->fetch($GLOBALS['template_dir'] . "pharmacies/" . $this->template_mod . "_edit.html");
+                                       
+                                        ob_start();//Start output Buffer
+                                        require_once($GLOBALS['template_dir'] . "pharmacies/" . $this->template_mod . "_edit.php");
+                                        $echoed_content = ob_get_clean(); // gets content, discards buffer
+                                        return $echoed_content;
 	}
 
 	function list_action($sort = "") {
+                                    
+                                        //echo "inside list_action() ";
 
 		if (!empty($sort)) {
-			$this->assign("pharmacies", $this->Pharmacy->pharmacies_factory("",$sort));
+                                                        //$this->assign("pharmacies", $this->Pharmacy->pharmacies_factory("",$sort));
+                                                        $this->pharmacies = $this->Pharmacy->pharmacies_factory("",$sort);
 		}
 		else {
-			$this->assign("pharmacies", $this->Pharmacy->pharmacies_factory());
+			//$this->assign("pharmacies", $this->Pharmacy->pharmacies_factory());
+                                                               $this->pharmacies = $this->Pharmacy->pharmacies_factory();
 		}
 		//print_r(Prescription::prescriptions_factory($id));
-		return $this->fetch($GLOBALS['template_dir'] . "pharmacies/" . $this->template_mod . "_list.html");
+                
+		//return $this->fetch($GLOBALS['template_dir'] . "pharmacies/" . $this->template_mod . "_list.html");
+                                        //require_once($GLOBALS['template_dir'] . "pharmacies/" . $this->template_mod . "_list.php");
+                                        
+                                        ob_start();
+                                        require_once($GLOBALS['template_dir'] . "pharmacies/" . $this->template_mod . "_list.php");
+                                        $echoed_content = ob_get_clean(); // gets content, discards buffer
+                                        return $echoed_content;
 	}
 
 

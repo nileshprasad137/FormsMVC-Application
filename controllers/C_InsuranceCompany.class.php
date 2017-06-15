@@ -8,15 +8,29 @@ class C_InsuranceCompany extends Controller {
 
 	var $template_mod;
 	var $icompanies;
-
+                    
+                   var $form_action;
+                   var $style;
+                   var $current_action;
+                   var $webroot;
+                   
+                   var $x12_partners;
+                   var $insurancecompany;
+                   //var $icompanies;
+                   
 	function __construct($template_mod = "general") {
 		parent::__construct();
 		$this->icompanies = array();
 		$this->template_mod = $template_mod;
-		$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
-		$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&insurance_company&");
-		$this->assign("STYLE", $GLOBALS['style']);
-		$this->assign("WEB_ROOT", $GLOBALS['webroot'] );
+		//$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
+		//$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&insurance_company&");
+		//$this->assign("STYLE", $GLOBALS['style']);
+		//$this->assign("WEB_ROOT", $GLOBALS['webroot'] );
+                
+                                       $this->form_action =  $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
+                                       $this->current_action = $GLOBALS['webroot']."/controller.php?" . "practice_settings&insurance_company&";
+                                       $this->style = $GLOBALS['style'];
+                                       $this->webroot = $GLOBALS['webroot'] ;
 		$this->InsuranceCompany = new InsuranceCompany();
 	}
 
@@ -33,28 +47,47 @@ class C_InsuranceCompany extends Controller {
 		}
 
 		$x = new X12Partner();
-		$this->assign("x12_partners", $x->_utility_array($x->x12_partner_factory()));
+		//$this->assign("x12_partners", $x->_utility_array($x->x12_partner_factory()));
+                                        $this->x12_partners = $x->_utility_array($x->x12_partner_factory());
 
-		$this->assign("insurancecompany", $this->icompanies[0]);
-		return $this->fetch($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_edit.html");
+		//$this->assign("insurancecompany", $this->icompanies[0]);
+                                        $this->insurancecompany = $this->icompanies[0];
+		//return $this->fetch($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_edit.html");
+                                        
+                                        //require_once($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_edit.php");
+                                        ob_start();
+                                        require_once($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_edit.php");
+                                        $echoed_content = ob_get_clean(); // gets content, discards buffer
+                                        return $echoed_content;
 	}
 
 	function list_action($sort = "") {
 
 		if (!empty($sort)) {
-			$this->assign("icompanies", $this->InsuranceCompany->insurance_companies_factory("",$sort));
+			//$this->assign("icompanies", $this->InsuranceCompany->insurance_companies_factory("",$sort));
+                                                                $this->icompanies = $this->InsuranceCompany->insurance_companies_factory("",$sort);
 		}
 		else {
-			$this->assign("icompanies", $this->InsuranceCompany->insurance_companies_factory());
+			//$this->assign("icompanies", $this->InsuranceCompany->insurance_companies_factory());
+                                                            $this->icompanies = $this->InsuranceCompany->insurance_companies_factory();
 		}
 
-		return $this->fetch($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_list.html");
+		//return $this->fetch($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_list.html");
+                                       // require_once($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_list.php");
+                                        ob_start();
+                                        require_once($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_list.php");
+                                        $echoed_content = ob_get_clean(); // gets content, discards buffer
+                                        return $echoed_content;
 	}
 
 
 	function edit_action_process() {
-		if ($_POST['process'] != "true")
-			return;
+                                    
+                                        //echo "hi";
+                                        if ($_POST['process'] != "true"){
+                                            //echo "failed";
+                                            return;                                        
+                                        }
 		//print_r($_POST);
 		if (is_numeric($_POST['id'])) {
 			$this->icompanies[0] = new InsuranceCompany($_POST['id']);

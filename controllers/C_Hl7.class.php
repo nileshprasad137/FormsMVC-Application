@@ -5,15 +5,26 @@ require_once($GLOBALS['fileroot'] ."/library/classes/Pharmacy.class.php");
 include_once ($GLOBALS['fileroot'] ."/library/classes/class.Parser_HL7v2.php");
 
 class C_Hl7 extends Controller {
+    
+    var $style;
+    
+    var $hl7_message_err;
+    var $hl7_array;
 
     function __construct($template_mod = "general") {
     	parent::__construct();
     	$this->template_mod = $template_mod;
-    	$this->assign("STYLE", $GLOBALS['style']);
+    	//$this->assign("STYLE", $GLOBALS['style']);
+                    $this->style = $GLOBALS['style'];
     }
     
     function default_action() {
-		return $this->fetch($GLOBALS['template_dir'] . "hl7/" . $this->template_mod . "_parse.html");
+		//return $this->fetch($GLOBALS['template_dir'] . "hl7/" . $this->template_mod . "_parse.html");
+                                        //require_once($GLOBALS['template_dir'] . "hl7/" . $this->template_mod . "_parse.php");
+                                        ob_start();
+                                        require_once($GLOBALS['template_dir'] . "hl7/" . $this->template_mod . "_parse.php");
+                                        $echoed_content = ob_get_clean(); // gets content, discards buffer
+                                        return $echoed_content;
 	}
 	function default_action_process() {
 		$msg = '';
@@ -24,9 +35,11 @@ class C_Hl7 extends Controller {
 		$err = $hp->parse();
 		//print_r($hp);
 		if (!empty($err)) {
-			$this->assign("hl7_message_err", nl2br("Error:<br>" . $err));
+			//$this->assign("hl7_message_err", nl2br("Error:<br>" . $err));
+                                                            $this->hl7_message_err = nl2br("Error:<br>" . $err);
 		}
-		$this->assign("hl7_array", $hp->composite_array());
+		//$this->assign("hl7_array", $hp->composite_array());
+                                      $this->hl7_array = $hp->composite_array();
 		return;
 	}
     

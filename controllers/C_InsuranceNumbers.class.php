@@ -9,16 +9,34 @@ class C_InsuranceNumbers extends Controller {
         var $template_mod;
         var $providers;
         var $insurance_numbers;
+        
+        var $form_action;
+        var $current_action;
+        var $style;
+        var $webroot;
+        var $error;
+        var $ic_array;
+        var $ic_type_options_array;
+        var $ic_rendering_type_options_array;
+        var $provider;
+        var $ins;
+        
 
         function __construct($template_mod = "general") {
                 parent::__construct();
                 $this->providers = array();
                 $this->insurance_numbers = array();
                 $this->template_mod = $template_mod;
-                $this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
-                $this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&insurance_numbers&");
-                $this->assign("STYLE", $GLOBALS['style']);
-        		$this->assign("WEB_ROOT", $GLOBALS['webroot'] );
+                //$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
+                //$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&insurance_numbers&");
+                //$this->assign("STYLE", $GLOBALS['style']);
+                //$this->assign("WEB_ROOT", $GLOBALS['webroot'] );
+                
+                $this->form_action = $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
+                $this->current_action = $GLOBALS['webroot']."/controller.php?" . "practice_settings&insurance_numbers&";
+                $this->style = $GLOBALS['style'];
+                $this->webroot = $GLOBALS['webroot'] ;               
+                
         }
 
         function default_action() {
@@ -56,7 +74,8 @@ class C_InsuranceNumbers extends Controller {
                 else {
                         $this->insurance_numbers[0] = new InsuranceNumbers();
                         $this->providers[0] = new Provider();
-                        $this->assign("ERROR","A provider must be specified. Check the link you you came from or the URL and try again.");
+                        //$this->assign("ERROR","A provider must be specified. Check the link you you came from or the URL and try again.");
+                        $this->error = "A provider must be specified. Check the link you you came from or the URL and try again.";
                 }
                 $ic = new InsuranceCompany();
                 $icompanies =  $ic->insurance_companies_factory();
@@ -81,20 +100,39 @@ class C_InsuranceNumbers extends Controller {
                         $ic_rendering_type_options_array[$type] = "$type  $type_title";
                 }
 
-                $this->assign("ic_array", $ic_array);
-                $this->assign("ic_type_options_array", $ic_type_options_array);
-                $this->assign("ic_rendering_type_options_array", $ic_rendering_type_options_array);
+                //$this->assign("ic_array", $ic_array);
+                //$this->assign("ic_type_options_array", $ic_type_options_array);
+                //$this->assign("ic_rendering_type_options_array", $ic_rendering_type_options_array);
 
-                $this->assign("provider", $this->providers[0]);
-                $this->assign("ins", $this->insurance_numbers[0]);
-                return $this->fetch($GLOBALS['template_dir'] . "insurance_numbers/" . $this->template_mod . "_edit.html");
+                //$this->assign("provider", $this->providers[0]);
+                //$this->assign("ins", $this->insurance_numbers[0]);
+                //return $this->fetch($GLOBALS['template_dir'] . "insurance_numbers/" . $this->template_mod . "_edit.html");
+                
+                $this->ic_array = $ic_array;
+                $this->ic_type_options_array = $ic_type_options_array;
+                $this->ic_rendering_type_options_array = $ic_rendering_type_options_array;
+                $this->provider = $this->providers[0];
+                //echo "this->provider=".$this->provider;
+                $this->ins = $this->insurance_numbers[0];
+                
+                ob_start();
+                require_once($GLOBALS['template_dir'] . "insurance_numbers/" . $this->template_mod . "_edit.php");
+                $echoed_content = ob_get_clean(); // gets content, discards buffer
+                return $echoed_content;
         }
 
         function list_action() {
 
                 $p = new Provider();
-                $this->assign("providers", $p->providers_factory());
-                return $this->fetch($GLOBALS['template_dir'] . "insurance_numbers/" . $this->template_mod . "_list.html");
+                //$this->assign("providers", $p->providers_factory());
+                //return $this->fetch($GLOBALS['template_dir'] . "insurance_numbers/" . $this->template_mod . "_list.html");
+                $this->providers = $p->providers_factory();
+                
+                ob_start();
+                require_once($GLOBALS['template_dir'] . "insurance_numbers/" . $this->template_mod . "_list.php");
+                $echoed_content = ob_get_clean(); // gets content, discards buffer
+                return $echoed_content;
+                
         }
 
 

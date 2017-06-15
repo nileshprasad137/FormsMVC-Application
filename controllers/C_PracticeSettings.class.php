@@ -9,19 +9,33 @@ require_once($GLOBALS['fileroot'] ."/library/classes/InsuranceNumbers.class.php"
 class C_PracticeSettings extends Controller {
 
 	var $template_mod;
+                    var $form_action;
+                    var $top_action;
+                    var $style;
+                    var $css_header;
+                    
+                    var $action_name;
+                    var $display_action;
 
 	function __construct ($template_mod = "general") {
 		parent::__construct();
 		$this->template_mod = $template_mod;
-		$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
-		$this->assign("TOP_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings" . "&");
-		$this->assign("STYLE", $GLOBALS['style']);
-	    $this->assign("CSS_HEADER",  $GLOBALS['css_header'] );
+		//$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
+                                        $this->form_action = $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
+		//$this->assign("TOP_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings" . "&");
+                                        $this->top_action = $GLOBALS['webroot']."/controller.php?" . "practice_settings" . "&";
+		//$this->assign("STYLE", $GLOBALS['style']);
+                                        $this->style = $GLOBALS['style'];
+                                        //$this->assign("CSS_HEADER",  $GLOBALS['css_header'] );
+                                        $this->css_header = $GLOBALS['css_header'] ;
 	}
 
 	function default_action($display = "") {
-		$this->assign("display",$display);
-		$this->display($GLOBALS['template_dir'] . "practice_settings/" . $this->template_mod . "_list.html");
+		//$this->assign("display",$display);
+		  //$this->display($GLOBALS['template_dir'] . "practice_settings/" . $this->template_mod . "_list.html");
+                                        $this->display_action = $display;
+                                        //echo $this->display_action;
+                                        require_once($GLOBALS['template_dir'] . "practice_settings/" . $this->template_mod . "_list.php");
 	}
 
 	function pharmacy_action($arg) {
@@ -30,14 +44,15 @@ class C_PracticeSettings extends Controller {
 		//this dance is so that the controller system which only cares about the name part of the first two arguments get what it wants
 		//and the rest gets passed as normal argument values, really this all goes back to workarounds for problems with call_user_func
 		//and value passing
-
+                                        //echo "i am inside pharmacy function";
 		$fga = func_get_args();
 
 		$fga = array_slice($fga,1);
 		$args = array_merge(array("pharmacy" => "",$arg => ""),$fga);
 
 		$display =  $c->act($args);
-		$this->assign("ACTION_NAME", xl("Pharmacies") );
+		//$this->assign("ACTION_NAME", xl("Pharmacies") );
+                                        $this->action_name = "Pharmacies";
 		$this->default_action($display);
 	}
 
@@ -54,7 +69,8 @@ class C_PracticeSettings extends Controller {
 		$args = array_merge(array("insurance_company" => "",$arg => ""),$fga);
 
 		$display =  $c->act($args);
-		$this->assign("ACTION_NAME", xl("Insurance Companies") );
+		//$this->assign("ACTION_NAME", xl("Insurance Companies") );
+                                      $this->action_name = "Insurance Companies";
 		$this->default_action($display);
 	}
 
@@ -72,7 +88,8 @@ class C_PracticeSettings extends Controller {
 
 		$display =  $c->act($args);
 
-		$this->assign("ACTION_NAME", xl("Insurance Numbers") );
+		//$this->assign("ACTION_NAME", xl("Insurance Numbers") );
+                                        $this->action_name = "Insurance Numbers";
 		$this->default_action($display);
 	}
 
@@ -90,7 +107,8 @@ class C_PracticeSettings extends Controller {
 
 		$display =  $c->act($args);
 
-		$this->assign("ACTION_NAME", xl("Documents") );
+		//$this->assign("ACTION_NAME", xl("Documents") );
+                                       $this->action_name = "Documents";
 		$this->default_action($display);
 	}
 
@@ -108,7 +126,8 @@ class C_PracticeSettings extends Controller {
 
 		$display =  $c->act($args);
 
-		$this->assign("ACTION_NAME", xl("Documents") );
+		//$this->assign("ACTION_NAME", xl("Documents") );
+                                           $this->action_name = "Documents";
 		$this->default_action($display);
 	}
 
@@ -126,7 +145,8 @@ class C_PracticeSettings extends Controller {
 
 		$display =  $c->act($args);
 
-		$this->assign("ACTION_NAME", xl("X12 Partners") );
+		//$this->assign("ACTION_NAME", xl("X12 Partners") );
+                                      $this->action_name = "X12 Partners ";
 		$this->default_action($display);
 	}
 
@@ -142,7 +162,9 @@ class C_PracticeSettings extends Controller {
 		$fga = array_slice($fga,1);
 		$args = array_merge(array("hl7" => "",$arg => ""),$fga);
 		$display =  $c->act($args);
-		$this->assign("ACTION_NAME", xl("HL7 Viewer") );
+		//$this->assign("ACTION_NAME", xl("HL7 Viewer") );
+                                        
+                                       $this->action_name = "HL7 Viewer";
 		$this->default_action($display);
 	}
 

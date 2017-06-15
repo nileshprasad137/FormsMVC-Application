@@ -1,6 +1,7 @@
 <form name="pharmacy" method="post" action="{$FORM_ACTION}">
 <!-- it is important that the hidden form_id field be listed first, when it is called is populates any old information attached with the id, this allows for partial edits
         if it were called last, the settings from the form would be overwritten with the old information-->
+{$pharmacy->id}
 <input type="hidden" name="form_id" value="{$pharmacy->id}" />
 <table style="font-size:9pt;" width="500px" CELLSPACING="0" CELLPADDING="3">
 <tr>

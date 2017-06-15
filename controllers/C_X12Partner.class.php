@@ -8,15 +8,28 @@ class C_X12Partner extends Controller {
 	var $template_mod;
 	var $providers;
 	var $x12_partners;
+        
+                    var $style;
+                    var $form_action;
+                    var $current_action;
+                    var $webroot;
+                    
+                    var $partner;
+                    var $partners;
 
 	function __construct($template_mod = "general") {
 		parent::__construct();
 		$this->x12_partner = array();
 		$this->template_mod = $template_mod;
-		$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
-		$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&x12_partner&");
-		$this->assign("STYLE", $GLOBALS['style']);
-        $this->assign("WEB_ROOT", $GLOBALS['webroot'] );
+		//$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
+		//$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&x12_partner&");
+		//$this->assign("STYLE", $GLOBALS['style']);
+                                       //$this->assign("WEB_ROOT", $GLOBALS['webroot'] );
+                
+                                       $this->form_action = $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
+                                       $this->current_action = $GLOBALS['webroot']."/controller.php?" . "practice_settings&x12_partner&";
+                                       $this->style = $GLOBALS['style'];
+                                       $this->webroot = $GLOBALS['webroot'] ;
 	}
 
 	function default_action() {
@@ -33,9 +46,17 @@ class C_X12Partner extends Controller {
 		else {
 			$this->x12_partners[0] = new X12Partner();
 		}
-		$this->assign("partner", $this->x12_partners[0]);
-		return $this->fetch($GLOBALS['template_dir'] . "x12_partners/" . $this->template_mod . "_edit.html");
-	}
+		//$this->assign("partner", $this->x12_partners[0]);
+		//return $this->fetch($GLOBALS['template_dir'] . "x12_partners/" . $this->template_mod . "_edit.html");
+                                        
+                                        $this->partner = $this->x12_partners[0];
+                                        //require_once($GLOBALS['template_dir'] . "x12_partners/" . $this->template_mod . "_edit.php");        
+                                        ob_start();
+                                        require_once($GLOBALS['template_dir'] . "x12_partners/" . $this->template_mod . "_edit.php");
+                                        $echoed_content = ob_get_clean(); // gets content, discards buffer
+                                        return $echoed_content;
+                
+                }
 	
 	function list_action() {
 
@@ -46,8 +67,16 @@ class C_X12Partner extends Controller {
 		//$x->persist();
 		//$x->populate();
 		
-		$this->assign("partners", $x->x12_partner_factory());
-		return $this->fetch($GLOBALS['template_dir'] . "x12_partners/" . $this->template_mod . "_list.html");
+		//$this->assign("partners", $x->x12_partner_factory());
+		//return $this->fetch($GLOBALS['template_dir'] . "x12_partners/" . $this->template_mod . "_list.html");
+                                        
+                                        $this->partners = $x->x12_partner_factory();
+                                        //require_once($GLOBALS['template_dir'] . "x12_partners/" . $this->template_mod . "_list.php");
+                                        ob_start();
+                                        require_once($GLOBALS['template_dir'] . "x12_partners/" . $this->template_mod . "_list.php");
+                                        $echoed_content = ob_get_clean(); // gets content, discards buffer
+                                        return $echoed_content;
+                                        
 	}
 
 
