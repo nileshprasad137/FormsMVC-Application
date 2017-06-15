@@ -10,17 +10,17 @@
 <body class="body_top">
 
 <div>
-    <b>Practice Settings</b>
+    <b><?php echo xl("Practice Settings");?></b>
 </div>
 
 <div>
     <div class="small">
-        <a href="<?php echo $this->top_action;?>pharmacy&action=list">Pharmacies</a> |
-        <a href="<?php echo $this->top_action;?>insurance_company&action=list">Insurance Companies</a> |
-        <a href="<?php echo $this->top_action;?>insurance_numbers&action=list">Insurance Numbers</a> |
-        <a href="<?php echo $this->top_action;?>x12_partner&action=list">X12 Partners</a> |
-        <a href="<?php echo $this->top_action;?>document&action=queue">Documents</a> |
-        <a href="<?php echo $this->top_action;?>hl7&action=default">HL7 Viewer</a>
+        <a href="<?php echo $this->top_action;?>pharmacy&action=list"><?php echo xl("Pharmacies");?></a> |
+        <a href="<?php echo $this->top_action;?>insurance_company&action=list"><?php echo xl("Insurance Companies");?></a> |
+        <a href="<?php echo $this->top_action;?>insurance_numbers&action=list"><?php echo xl("Insurance Numbers");?></a> |
+        <a href="<?php echo $this->top_action;?>x12_partner&action=list"><?php echo xl("X12 Partners");?></a> |
+        <a href="<?php echo $this->top_action;?>document&action=queue"><?php echo xl("Documents");?></a> |
+        <a href="<?php echo $this->top_action;?>hl7&action=default"><?php echo xl("HL7 Viewer");?></a>
     </div>
     
     <br/>

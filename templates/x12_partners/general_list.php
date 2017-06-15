@@ -2,10 +2,10 @@
 <span>Add New Partner</span></a><br><br>
 <table cellpadding="1" cellspacing="0" class="showborder">
     <tr class="showborder_head">
-        <th width="200px">Name</th>
-        <th width="130px">Sender ID</th>
-        <th width="130px">Receiver ID</th>
-        <th>Version</th>
+        <th width="200px"><?php echo xl("Name");?></th>
+        <th width="130px"><?php echo xl("Sender ID");?></th>
+        <th width="130px"><?php echo xl("Receiver ID");?></th>
+        <th><?php echo xl("Version");?></th>
     </tr>
     
     <?php if(is_array($this->partners)) {?>
@@ -20,7 +20,7 @@
         <?php }?>
       <?php }  else { ?>
             <tr height="25" class="center_display">
-                <td colspan="4">No Partners Found</td>
+                <td colspan="4"><?php echo xl("No Partners Found ");?></td>
             </tr>
       <?php }?>
 </table>

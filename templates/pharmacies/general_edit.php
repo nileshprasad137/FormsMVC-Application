@@ -5,25 +5,25 @@
 <input type="hidden" name="form_id" value="<?php echo $this->pharmacy->id;?>" />
 <table style="font-size:9pt;" width="500px" CELLSPACING="0" CELLPADDING="3">
 <tr>
-    <td width="150px" VALIGN="MIDDLE" >Name</td>
+    <td width="150px" VALIGN="MIDDLE" ><?php echo xl("Name");?> </td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="40" name="name" value="<?php echo $this->pharmacy->name;?>" onKeyDown="PreventIt(event)" />(Required)
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >Address</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Address");?></td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="40" name="address_line1" value="<?php echo $this->pharmacy->address->line1;?>" onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >Address</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Address");?></td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="40" name="address_line2" value="<?php echo $this->pharmacy->address->line2;?>" onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >City, State Zip</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("City ,state, zip");?></td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="25" name="city" value="<?php echo $this->pharmacy->address->city;?>" onKeyDown="PreventIt(event)" /> , 
         <input type="text" size="2" maxlength="2" name="state" value="<?php echo $this->pharmacy->address->state;?>" onKeyDown="PreventIt(event)" /> 
@@ -31,38 +31,26 @@
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >Email</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Email");?></td>
     <td VALIGN="MIDDLE" >
         <input TYPE="TEXT" NAME="email" SIZE="35" VALUE="<?php echo $this->pharmacy->email;?>" onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >Phone</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Phone");?></td>
     <td VALIGN="MIDDLE" >
         <input TYPE="TEXT" NAME="phone" SIZE="12" VALUE="<?php echo $this->pharmacy->get_phone();?>" onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >Fax</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Fax");?></td>
     <td VALIGN="MIDDLE" >
         <input TYPE="TEXT" NAME="fax" SIZE="12" VALUE="<?php echo $this->pharmacy->get_fax();?>" onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 
-<?php //print_r($this->pharmacy->transmit_method_array ); ?>
-<?php //print_r($this->pharmacy->transmit_method ); ?>
-
-<?php
-//testing html_options
-foreach ($this->pharmacy->transmit_method_array as $key => $value) {
-   echo $key.'&nbsp;';
-    echo "value = ".$value;
-    echo "<br>";    
-}
-?>
-
 <tr>
-    <td VALIGN="MIDDLE" >Default Method</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Default Method");?></td>
     <td VALIGN="MIDDLE" >
         <select name="transmit_method">
             <!--{html_options    options=$pharmacy->transmit_method_array  selected=$pharmacy->transmit_method}-->
@@ -79,9 +67,9 @@ foreach ($this->pharmacy->transmit_method_array as $key => $value) {
 </tr>
 <tr><td colspan="2">&nbsp;</td></tr>
 <tr>
-    <td colspan="2"><a href="javascript:submit_pharmacy();" class="css_button"><span>Save</span></a>
+    <td colspan="2"><a href="javascript:submit_pharmacy();" class="css_button"><span><?php echo xl("Save");?></span></a>
         <a href="controller.php?practice_settings&pharmacy&action=list" class="css_button" onclick="top.restoreSession()">
-                    <span>Cancel</span></a>
+                    <span><?php echo xl("Cancel");?></span></a>
     </td>
 </tr>
 </table>

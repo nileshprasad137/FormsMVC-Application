@@ -1,12 +1,12 @@
 <a href="controller.php?practice_settings&<?php echo $top_action;?>insurance_company&action=edit" 
    onclick="top.restoreSession()" class="css_button" >
-<span>Add a Company</span></a><br>
+<span><?php echo xl("Add a company");?> </span></a><br>
 <br>
 <table cellpadding="1" cellspacing="0" class="showborder">
     <tr class="showborder_head">
-        <th width="140px"><b>Name</b></th>
-        <th width="300px"><b>City, State</b></th>
-        <th><b>Default X12 Partner</b></th>
+        <th width="140px"><b><?php echo xl("Name");?> </b></th>
+        <th width="300px"><b><?php echo xl("City,State");?> </b></th>
+        <th><b><?php echo xl("Default X12 Partner");?> </b></th>
     </tr>
     
     
@@ -31,7 +31,7 @@
     else {
     ?>
     <tr class="center_display">
-        <td colspan="3">No Insurance Companies Found</td>
+        <td colspan="3"><?php echo xl("No Insurance companies found.");?> </td>
     </tr>
 </table>
 

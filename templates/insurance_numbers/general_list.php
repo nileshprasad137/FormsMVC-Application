@@ -1,10 +1,10 @@
 <table cellpadding="1" cellspacing="0" class="showborder">
         <tr class="showborder_head">
-                <th width="130px">Name</th>
+                <th width="130px"><?php echo xl("Name");?></th>
                 <th width="80px">&nbsp;</th>
-                <th width="100px">Provider #</th>
-                <th width="100px">Rendering #</th>
-                <th width="100px">Group #</th>
+                <th width="100px"><?php echo xl("Provider");?> #</th>
+                <th width="100px"><?php echo xl("Rendering");?>  #</th>
+                <th width="100px"><?php echo xl("Group");?>  #</th>
         </tr>
         
         <?php if(is_array($this->providers)) { 
@@ -23,7 +23,7 @@
         <?php } }
         else { ?>
             <tr class="center_display">
-                <td colspan="5">No Providers Found</td>
+                <td colspan="5"><?php echo xl("No Providers Found");?> </td>
             </tr>
         <?php }?>
     </table>

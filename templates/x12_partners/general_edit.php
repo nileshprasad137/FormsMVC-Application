@@ -28,7 +28,7 @@ document.x12_partner.name.focus();
 <form name="x12_partner" method="post" action="<?php echo $this->form_action;?>">
 <table width="400px" style="font-size:9pt;" CELLSPACING="0" CELLPADDING="3" border="0">
     <tr>
-        <td colspan="2">X12 Partner</td>
+        <td colspan="2"><?php echo xl("X12 Partner");?></td>
     </tr>
     <tr>
         <td ALIGN="LEFT" VALIGN="MIDDLE" >Partner&nbsp;Name</td>

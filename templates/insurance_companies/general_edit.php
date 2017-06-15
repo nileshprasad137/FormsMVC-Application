@@ -26,35 +26,35 @@ function jsWaitForDelay(delay) {
 <input type="hidden" name="form_id" value="<?php echo $this->insurancecompany->id;?>" />
 <table style="font-size:9pt;" width="500px" CELLSPACING="0" CELLPADDING="3">
 <tr>
-    <td width="220px" VALIGN="MIDDLE" >Name</td>
+    <td width="220px" VALIGN="MIDDLE" ><?php echo xl("Name");?> </td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="40" name="name" value="<?php echo $this->insurancecompany->get_name();?>" onKeyDown="PreventIt(event)" /> 
         Required
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >Attn</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Attn");?> </td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="40" name="attn" value="<?php echo $this->insurancecompany->get_attn();?>" onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 
 <tr>
-    <td VALIGN="MIDDLE" >Address</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Address");?> </td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="40" name="address_line1" value="<?php $this->insurancecompany->address->line1;?>" 
                onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >Address</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Address");?> </td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="40" name="address_line2" value="<?php echo $this->insurancecompany->address->line2;?>" 
                onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >City, State Zip</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("City,state zip");?> </td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="25" name="city" value="<?php echo $this->insurancecompany->address->city;?>" onKeyDown="PreventIt(event)" /> , 
         <input type="text" size="2" maxlength="2" name="state" value="<?php echo $this->insurancecompany->address->state;?>" 
@@ -63,14 +63,14 @@ function jsWaitForDelay(delay) {
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE" >Phone</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("Phone");?> </td>
     <td VALIGN="MIDDLE" >
         <input TYPE="TEXT" NAME="phone" SIZE="12" VALUE="<?php echo$this->insurancecompany->get_phone();?>" onKeyDown="PreventIt(event)" />
     </td>
 </tr>
 <tr>
     
-    <td VALIGN="MIDDLE" >CMS ID</td>
+    <td VALIGN="MIDDLE" ><?php echo xl("CMS ID");?> </td>
     <td VALIGN="MIDDLE" >
         <input type="text" size="15" name="cms_id" value="<?php echo $this->insurancecompany->get_cms_id();?>" onKeyDown="PreventIt(event)" />
     
@@ -83,7 +83,7 @@ function jsWaitForDelay(delay) {
     </td>
 </tr>
 <tr>
-    <td VALIGN="MIDDLE">Payer Type</td>
+    <td VALIGN="MIDDLE"><?php echo xl("Payer Type");?> </td>
     <td VALIGN="MIDDLE">
         <!--{html_options name="ins_type_code" options=$insurancecompany->ins_type_code_array 
         selected=$insurancecompany->get_ins_type_code()}-->
