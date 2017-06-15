@@ -22,11 +22,7 @@ class C_InsuranceCompany extends Controller {
 		parent::__construct();
 		$this->icompanies = array();
 		$this->template_mod = $template_mod;
-		//$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
-		//$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&insurance_company&");
-		//$this->assign("STYLE", $GLOBALS['style']);
-		//$this->assign("WEB_ROOT", $GLOBALS['webroot'] );
-                
+		
                                        $this->form_action =  $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
                                        $this->current_action = $GLOBALS['webroot']."/controller.php?" . "practice_settings&insurance_company&";
                                        $this->style = $GLOBALS['style'];
@@ -46,15 +42,10 @@ class C_InsuranceCompany extends Controller {
 			$this->icompanies[0] = new InsuranceCompany($id);
 		}
 
-		$x = new X12Partner();
-		//$this->assign("x12_partners", $x->_utility_array($x->x12_partner_factory()));
-                                        $this->x12_partners = $x->_utility_array($x->x12_partner_factory());
-
-		//$this->assign("insurancecompany", $this->icompanies[0]);
-                                        $this->insurancecompany = $this->icompanies[0];
-		//return $this->fetch($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_edit.html");
-                                        
-                                        //require_once($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_edit.php");
+		$x = new X12Partner();		
+                                      $this->x12_partners = $x->_utility_array($x->x12_partner_factory());		
+                                      $this->insurancecompany = $this->icompanies[0];
+		
                                         ob_start();
                                         require_once($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_edit.php");
                                         $echoed_content = ob_get_clean(); // gets content, discards buffer
@@ -63,17 +54,12 @@ class C_InsuranceCompany extends Controller {
 
 	function list_action($sort = "") {
 
-		if (!empty($sort)) {
-			//$this->assign("icompanies", $this->InsuranceCompany->insurance_companies_factory("",$sort));
+		if (!empty($sort)) {			
                                                                 $this->icompanies = $this->InsuranceCompany->insurance_companies_factory("",$sort);
 		}
-		else {
-			//$this->assign("icompanies", $this->InsuranceCompany->insurance_companies_factory());
+		else {			
                                                             $this->icompanies = $this->InsuranceCompany->insurance_companies_factory();
-		}
-
-		//return $this->fetch($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_list.html");
-                                       // require_once($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_list.php");
+		}		
                                         ob_start();
                                         require_once($GLOBALS['template_dir'] . "insurance_companies/" . $this->template_mod . "_list.php");
                                         $echoed_content = ob_get_clean(); // gets content, discards buffer

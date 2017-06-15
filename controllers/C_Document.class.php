@@ -23,11 +23,11 @@ class C_Document extends Controller {
 	var $_config;
                     var $manual_set_owner=false; // allows manual setting of a document owner/service
         
-                var $form_action;
-                var $current_action;
-                var $style;
+                  var $form_action;
+                  var $current_action;
+                  var $style;
                 
-                var $category_id;
+                 var $category_id;
                  var $category_name;
                  var $hide_encryption;
                  var $patient_id;
@@ -346,7 +346,7 @@ class C_Document extends Controller {
                                          $this->delete_string = $delete_string;
                                          $this->refresh_action = $this->_link("list");		
 		
-                                         $this->validate_action = $this->_link("validate") .	"document_id=" . $d->get_id() . "&process=true";
+                                         $this->validate_action = $this->_link("validate") ."document_id=" . $d->get_id() . "&process=true";
 
 		// Added by Rod to support document date update:
 		
@@ -938,7 +938,7 @@ class C_Document extends Controller {
 		    $messages .= xl('Document passed integrity check.');
 		}
 		$this->_state = false;
-		//$this->assign("messages", $messages);
+		
                                         $this->messages = $messages;
 		if($d->couch_docid && $d->couch_revid){
 			//Removing the temporary file which is used to create the hash

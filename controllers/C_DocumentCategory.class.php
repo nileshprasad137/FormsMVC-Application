@@ -24,15 +24,11 @@ class C_DocumentCategory extends Controller {
 	function __construct($template_mod = "general") {
 		parent::__construct();
 		$this->document_categories = array();
-		$this->template_mod = $template_mod;
-		//$this->assign("FORM_ACTION", $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING']);
-		//$this->assign("CURRENT_ACTION", $GLOBALS['webroot']."/controller.php?" . "practice_settings&document_category&");
-		$this->link = $GLOBALS['webroot']."/controller.php?" . "document_category&";
-		//$this->assign("STYLE", $GLOBALS['style']);
-                                        
-                                        $this->form_action = $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
-                                        $this->current_action = $GLOBALS['webroot']."/controller.php?" . "practice_settings&document_category&";
-                                        $this->style = $GLOBALS['style'];
+		$this->template_mod = $template_mod;		
+		$this->link = $GLOBALS['webroot']."/controller.php?" . "document_category&";                                       
+                                      $this->form_action = $GLOBALS['webroot']."/controller.php?" . $_SERVER['QUERY_STRING'];
+                                      $this->current_action = $GLOBALS['webroot']."/controller.php?" . "practice_settings&document_category&";
+                                      $this->style = $GLOBALS['style'];
 		
 		$t = new CategoryTree(1);
 		//print_r($t->tree);
@@ -52,10 +48,8 @@ class C_DocumentCategory extends Controller {
 		$menu  = new HTML_TreeMenu();
  		$this->_last_node = null;
  		$rnode = $this->_array_recurse($this->tree->tree);
-
 		$menu->addItem($rnode);
-		$treeMenu = new HTML_TreeMenu_DHTML($menu, array('images' => 'images', 'defaultClass' => 'treeMenuDefault'));
-		//$this->assign("tree_html",$treeMenu->toHTML());
+		$treeMenu = new HTML_TreeMenu_DHTML($menu, array('images' => 'images', 'defaultClass' => 'treeMenuDefault'));		
 		$this->tree_html = $treeMenu->toHTML();
 		//return $this->fetch($GLOBALS['template_dir'] . "document_categories/" . $this->template_mod . "_list.html");
                                         
@@ -69,13 +63,10 @@ class C_DocumentCategory extends Controller {
 		//echo $parent_is ."<br>";
 		//echo $this->tree->get_node_name($parent_is);
 		
-                                        //$this->assign("parent_name",$this->tree->get_node_name($parent_is));
-                                        //$this->assign("parent_is",$parent_is);
-		  //$this->assign("add_node",true);
                                         $this->parent_name = $this->tree->get_node_name($parent_is);
                                         $this->parent_is = $parent_is;
                                         $this->add_node = true;
-		return $this->list_action();	
+		  return $this->list_action();	
 	}
 	
 	function add_node_action_process() {
@@ -85,9 +76,9 @@ class C_DocumentCategory extends Controller {
 		$parent_is = $_POST['parent_is'];
 		$parent_name = $this->tree->get_node_name($parent_is);
 		$this->tree->add_node($parent_is,$name);
-	        $trans_message = xl('Sub-category','','',' ') . "'" . xl_document_category($name) . "'" . xl('successfully added to category,','',' ',' ') . "'" . $parent_name . "'";
-		//$this->assign("message",$trans_message);
-                                        $this->message = $trans_message;
+                                      $trans_message = xl('Sub-category','','',' ') . "'" . xl_document_category($name) . "'" . xl('successfully added to category,','',' ',' ') . "'" . $parent_name . "'";
+		
+                                      $this->message = $trans_message;
 		$this->_state = false;
 		return $this->list_action();	
 	}
@@ -114,8 +105,7 @@ class C_DocumentCategory extends Controller {
 		else
 		{
 		        $trans_message = xl('Category','','',' ') . "'" . $category_name . "'" . xl('is a root node and can not be deleted.','',' ') . "<br>";
-			//$this->assign("message",$trans_message);
-                                                              $this->message = $trans_message;
+		        $this->message = $trans_message;
                                         
 		}
 		$this->_state = false;
