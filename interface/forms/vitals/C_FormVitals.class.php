@@ -8,28 +8,52 @@ require_once("FormVitals.class.php");
 class C_FormVitals extends Controller {
 
 	var $template_dir;
-
+                   var $form_action;
+                   var $dont_save_link;
+                   var $style;
+                   var  $units_of_measurement;
+                   var $gbl_vitals_options;
+                   var $vitals;
+                   var $results;
+                   var $patient_age;
+                   var $patient_dob;
+                   var $view;
+                   
     function __construct($template_mod = "general") {
     	parent::__construct();
     	$returnurl = $GLOBALS['concurrent_layout'] ? 'encounter_top.php' : 'patient_encounter.php';
     	$this->template_mod = $template_mod;
     	$this->template_dir = dirname(__FILE__) . "/templates/vitals/";
-    	$this->assign("FORM_ACTION", $GLOBALS['web_root']);
-    	$this->assign("DONT_SAVE_LINK",$GLOBALS['webroot'] . "/interface/patient_file/encounter/$returnurl");
-    	$this->assign("STYLE", $GLOBALS['style']);
+    	//$this->assign("FORM_ACTION", $GLOBALS['web_root']);
+    	//$this->assign("DONT_SAVE_LINK",$GLOBALS['webroot'] . "/interface/patient_file/encounter/$returnurl");
+    	//$this->assign("STYLE", $GLOBALS['style']);
+                    $this->form_action = $GLOBALS['web_root'];
+                    $this->style =  $GLOBALS['style'];
+                    $this->dont_save_link =    $GLOBALS['webroot'] . "/interface/patient_file/encounter/$returnurl";
+
 
       // Options for units of measurement and things to omit.
-      $this->assign("units_of_measurement",$GLOBALS['units_of_measurement']);
-      $this->assign("gbl_vitals_options",$GLOBALS['gbl_vitals_options']);
+     // $this->assign("units_of_measurement",$GLOBALS['units_of_measurement']);
+      //$this->assign("gbl_vitals_options",$GLOBALS['gbl_vitals_options']);
+                    $this->units_of_measurement = $GLOBALS['units_of_measurement'];
+                    $this->gbl_vitals_options = $GLOBALS['gbl_vitals_options'];
     }
 
     function default_action_old() {
     	//$vitals = array();
     	//array_push($vitals, new FormVitals());
     	$vitals = new FormVitals();
-    	$this->assign("vitals",$vitals);
-    	$this->assign("results", $results);
-    	return $this->fetch($this->template_dir . $this->template_mod . "_new.html");
+    	//$this->assign("vitals",$vitals);
+    	//$this->assign("results", $results);
+    	//return $this->fetch($this->template_dir . $this->template_mod . "_new.html");
+                    
+                    $this->vitals = $vitals;
+                    $this->results = $results;
+                    
+                    ob_start();
+                    require_once($this->template_dir . $this->template_mod . "_new.php");
+                    $echoed_content = ob_get_clean(); // gets content, discards buffer
+                    return $echoed_content;
 	}
 
     function default_action($form_id) {
@@ -52,11 +76,13 @@ class C_FormVitals extends Controller {
     	$result = $dbconn->Execute($sql);
 
         // get the patient's current age
-    	$patient_data = getPatientData($GLOBALS['pid']);
-        $patient_dob=$patient_data['DOB'];
-        $patient_age = getPatientAge($patient_dob);
-    	$this->assign("patient_age", $patient_age);
-        $this->assign("patient_dob",$patient_dob);
+    	 $patient_data = getPatientData($GLOBALS['pid']);
+                    $patient_dob=$patient_data['DOB'];
+                    $patient_age = getPatientAge($patient_dob);
+    	//$this->assign("patient_age", $patient_age);
+                   //$this->assign("patient_dob",$patient_dob);
+                    $this->patient_age = $patient_age;
+                    $this->patient_dob = $patient_dob;
 
     	$i = 1;
     	while($result && !$result->EOF)
@@ -82,11 +108,20 @@ class C_FormVitals extends Controller {
     		$result->MoveNext();
     	}
 
-    	$this->assign("vitals",$vitals);
-    	$this->assign("results", $results);
+    	//$this->assign("vitals",$vitals);
+    	//$this->assign("results", $results);
 
-    	$this->assign("VIEW",true);
-	return $this->fetch($this->template_dir . $this->template_mod . "_new.html");
+    	//$this->assign("VIEW",true);
+	//return $this->fetch($this->template_dir . $this->template_mod . "_new.html");
+        
+                    $this->vitals = $vitals;
+                    $this->results = $results;
+                    $this->view = true;
+                    
+                    ob_start();
+                    require_once($this->template_dir . $this->template_mod . "_new.php");
+                    $echoed_content = ob_get_clean(); // gets content, discards buffer
+                    return $echoed_content;        
 
     }
 	
