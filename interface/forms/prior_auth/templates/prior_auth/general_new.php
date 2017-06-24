@@ -48,7 +48,7 @@ a {
 	<td colspan="2"><textarea name="comments" value="<?php echo $this->prior_auth->get_comments();?>" wrap="virtual" cols="75" rows="8">
             <?php echo $this->prior_auth->get_comments();?></textarea></td>
 </tr>
-<?php if($VIEW != true){?>
+<?php if($this->view != true){?>
 <tr>
 	<td><br><br><input type="submit" name="Submit" value="Save Form">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo $dont_save_link;?>" class="link">[Don't Save]</a></td>
 </tr>
