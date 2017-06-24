@@ -76,7 +76,7 @@ a {
 <tr>
 	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Constitutional");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Weight Change"}:</td>
+			<td class="response_prompt"><?php echo xl("Weight Change");?>:</td>
 			<td class="response">                                                         
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_weight_change() ){?>
@@ -86,7 +86,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                         </td>
-			<td class="response_prompt">{xl t="Weakness"}:</td>
+			<td class="response_prompt"><?php echo xl("Weakness");?>:</td>
 			<td class="response">                                                          
                                                           <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_weakness()){?>
@@ -96,7 +96,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                           </td>
-			<td class="response_prompt">{xl t="Fatigue"}:</td>
+			<td class="response_prompt"><?php echo xl("Fatigue");?>:</td>
 			<td class="response">                                                          
                                                           <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_fatigue()){?>
@@ -108,7 +108,7 @@ a {
                                                           </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Anorexia"}:</td>
+			<td class="response_prompt"><?php echo xl("Anorexia");?>:</td>
 			<td class="response">                            
                                                            <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_anorexia()){?>
@@ -118,7 +118,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                         </td>
-			<td class="response_prompt">{xl t="Fever"}:</td>
+			<td class="response_prompt"><?php echo xl("Fever");?>:</td>
 			<td class="response">                           
                                                           <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_fever()){?>
@@ -128,7 +128,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                         </td>
-			<td class="response_prompt">{xl t="Chills"}:</td>
+			<td class="response_prompt"><?php echo xl("Chills");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_chills()){?>
@@ -140,7 +140,7 @@ a {
                                                         </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Night Sweats"}:</td>
+			<td class="response_prompt"><?php echo xl("Night Sweats");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_night_sweats()){?>
@@ -150,7 +150,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                           </td>
-			<td class="response_prompt">{xl t="Insomnia"}:</td>
+			<td class="response_prompt"><?php echo xl("Insomnia");?>:</td>
 			<td class="response">                            
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_insomnia()){?>
@@ -160,7 +160,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                            </td>
-			<td class="response_prompt">{xl t="Irritability"}:</td>
+			<td class="response_prompt"><?php echo xl("Irritability");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_irritability()){?>
@@ -172,7 +172,7 @@ a {
                                                           </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Heat or Cold"}:</td>
+			<td class="response_prompt"><?php echo xl("Heat or Cold");?>:</td>
 			<td class="response">                            
                                                            <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_heat_or_cold()){?>
@@ -182,7 +182,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                            </td>
-			<td class="response_prompt">{xl t="Intolerance"}:</td>
+			<td class="response_prompt"><?php echo xl("Intolerance");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_intolerance()){?>
@@ -202,9 +202,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Eyes"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Eyes");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Change in Vision"}:</td>
+			<td class="response_prompt"><?php echo xl("Change in Vision");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_weight_change()){?>
@@ -214,7 +214,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                          </td>
-			<td class="response_prompt">{xl t="Family History of Glaucoma"}:</td>
+			<td class="response_prompt"><?php echo xl("Family History of Glaucoma");?>:</td>
 			<td class="response">                          
                                                           <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_glaucoma_history()){?>
@@ -224,7 +224,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                           </td>
-			<td class="response_prompt">{xl t="Eye Pain"}:</td>
+			<td class="response_prompt"><?php echo xl("Eye Pain");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_eye_pain()){?>
@@ -236,7 +236,7 @@ a {
                                                          </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Irritation"}:</td>
+			<td class="response_prompt"><?php echo xl("Irritation");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_irritation()){?>
@@ -246,7 +246,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                           </td>
-			<td class="response_prompt">{xl t="Redness"}:</td>
+			<td class="response_prompt"><?php echo xl("Redness");?>:</td>
 			<td class="response">                           
                                                           <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_redness()){?>
@@ -256,7 +256,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                           </td>
-			<td class="response_prompt">{xl t="Excessive Tearing"}:</td>
+			<td class="response_prompt"><?php echo xl("Excessive Tearing");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_excessive_tearing()){?>
@@ -268,7 +268,7 @@ a {
                                                          </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Double Vision"}:</td>
+			<td class="response_prompt"><?php echo xl("Double Vision");?>:</td>
 			<td class="response">                          
 			<?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_double_vision()){?>
@@ -278,7 +278,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                              </td>
-                                                          <td class="response_prompt">{xl t="Blind Spots"}:</td>
+                                                          <td class="response_prompt"><?php echo xl("Blind Spots");?>:</td>
 			<td class="response">                          
                                                           <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_blind_spots()){?>
@@ -288,7 +288,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                          </td>
-			<td class="response_prompt">{xl t="Photophobia"}:</td>
+			<td class="response_prompt"><?php echo xl("Photophobia");?>:</td>
 			<td class="response">                          
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_photophobia()){?>
@@ -308,9 +308,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Ears"}, {xl t="Nose"}, {xl t="Mouth"}, {xl t="Throat"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Ears");?>, <?php echo xl("Nose");?>, <?php echo xl("Mouth");?>, <?php echo xl("Throat");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Hearing Loss"}:</td>
+			<td class="response_prompt"><?php echo xl("Hearing Loss");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hearing_loss()){?>
@@ -320,7 +320,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                          </td>
-			<td class="response_prompt">{xl t="Discharge"}:</td>
+			<td class="response_prompt"><?php echo xl("Discharge");?>:</td>
 			<td class="response">                          
                                                           <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_discharge()){?>
@@ -330,7 +330,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                         </td>
-			<td class="response_prompt">{xl t="Pain"}:</td>
+			<td class="response_prompt"><?php echo xl("Pain");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_pain()){?>
@@ -342,7 +342,7 @@ a {
                                                         </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Vertigo"}:</td>
+			<td class="response_prompt"><?php echo xl("Vertigo");?>:</td>
 			<td class="response">                           
                                                            <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_vertigo()){?>
@@ -352,7 +352,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                         </td>
-			<td class="response_prompt">{xl t="Tinnitus"}:</td>
+			<td class="response_prompt"><?php echo xl("Tinnitus");?>:</td>
 			<td class="response">                         
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_tinnitus()){?>
@@ -362,7 +362,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                          </td>
-			<td class="response_prompt">{xl t="Frequent Colds"}:</td>
+			<td class="response_prompt"><?php echo xl("Frequent Colds");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_frequent_colds()){?>
@@ -374,7 +374,7 @@ a {
                                                         </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Sore Throat"}:</td>
+			<td class="response_prompt"><?php echo xl("Sore Throat");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_sore_throat()){?>
@@ -383,7 +383,7 @@ a {
                                                             <label><input type="radio" name="sore_throat" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?> </td>
-			<td class="response_prompt">{xl t="Sinus Problems"}:</td>
+			<td class="response_prompt"><?php echo xl("Sinus Problems");?>:</td>
 			<td class="response">                           
 			<?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_sinus_problems()){?>
@@ -393,7 +393,7 @@ a {
                                                          <?php }
                                                          }?> 
                                                             </td>
-                                                          <td class="response_prompt">{xl t="Post Nasal Drip"}:</td>
+                                                          <td class="response_prompt"><?php echo xl("Post Nasal Drip");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_frequent_colds()){?>
@@ -404,7 +404,7 @@ a {
                                                          }?> </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Nosebleed"}:</td>
+			<td class="response_prompt"><?php echo xl("Nosebleed");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_nosebleed()){?>
@@ -413,7 +413,7 @@ a {
                                                             <label><input type="radio" name="nosebleed" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?> </td>
-			<td class="response_prompt">{xl t="Snoring"}:</td>
+			<td class="response_prompt"><?php echo xl("Snoring");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_snoring()){?>
@@ -422,7 +422,7 @@ a {
                                                             <label><input type="radio" name="snoring" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?> </td>
-			<td class="response_prompt">{xl t="Apnea"}:</td>
+			<td class="response_prompt"><?php echo xl("Apnea");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_apnea()){?>
@@ -441,9 +441,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Breast"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Breast");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Breast Mass"}:</td>
+			<td class="response_prompt"><?php echo xl("Breast Mass");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_breast_mass()){?>
@@ -453,7 +453,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Discharge"}:</td>
+			<td class="response_prompt"><?php echo xl("Discharge");?>:</td>
 			<td class="response">                            
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_breast_discharge()){?>
@@ -463,7 +463,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Biopsy"}:</td>
+			<td class="response_prompt"><?php echo xl("Biopsy");?>:</td>
 			<td class="response">                            
                                                        <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_biopsy()){?>
@@ -475,7 +475,7 @@ a {
                                                         </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Abnormal Mammogram"}:</td>
+			<td class="response_prompt"><?php echo xl("Abnormal Mammogram");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_abnormal_mammogram()){?>
@@ -495,9 +495,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Respiratory"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Respiratory");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Cough"}:</td>
+			<td class="response_prompt"><?php echo xl("Cough");?>:</td>
 			<td class="response">                           
                                                           <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_cough()){?>
@@ -507,7 +507,7 @@ a {
                                                          <?php }
                                                          }?>  
                                                             </td>
-			<td class="response_prompt">{xl t="Sputum"}:</td>
+			<td class="response_prompt"><?php echo xl("Sputum");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_sputum()){?>
@@ -516,7 +516,7 @@ a {
                                                             <label><input type="radio" name="sputum" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?>  </td>
-			<td class="response_prompt">{xl t="Shortness of Breath"}:</td>
+			<td class="response_prompt"><?php echo xl("Shortness of Breath");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_shortness_of_breath()){?>
@@ -527,7 +527,7 @@ a {
                                                          }?>  </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Wheezing"}:</td>
+			<td class="response_prompt"><?php echo xl("Wheezing");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_wheezing()){?>
@@ -536,7 +536,7 @@ a {
                                                             <label><input type="radio" name="wheezing" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?>  </td>
-			<td class="response_prompt">{xl t="Hemoptysis"}:</td>
+			<td class="response_prompt"><?php echo xl("Hemoptysis");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hemoptsyis()){?>
@@ -545,7 +545,7 @@ a {
                                                             <label><input type="radio" name="hemoptsyis" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?>  </td>
-			<td class="response_prompt">{xl t="Asthma"}:</td>
+			<td class="response_prompt"><?php echo xl("Asthma");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_asthma()){?>
@@ -556,7 +556,7 @@ a {
                                                          }?>  </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="COPD"}:</td>
+			<td class="response_prompt"><?php echo xl("COPD");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_copd()){?>
@@ -575,9 +575,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Cardiovascular"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Cardiovascular");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Chest Pain"}:</td>
+			<td class="response_prompt"><?php echo xl("Chest Pain");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_chest_pain()){?>
@@ -586,7 +586,7 @@ a {
                                                             <label><input type="radio" name="chest_pain" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Palpitation"}:</td>
+			<td class="response_prompt"><?php echo xl("Palpitation");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_palpitation()){?>
@@ -595,7 +595,7 @@ a {
                                                             <label><input type="radio" name="palpitation" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Syncope"}:</td>
+			<td class="response_prompt"><?php echo xl("Syncope");?>:</td>
 			<td class="response">                          
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_syncope()){?>
@@ -606,7 +606,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="PND"}:</td>
+			<td class="response_prompt"><?php echo xl("PND");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_pnd()){?>
@@ -615,7 +615,7 @@ a {
                                                             <label><input type="radio" name="pnd" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="DOE"}:</td>
+			<td class="response_prompt"><?php echo xl("DOE");?>:</td>
 			<td class="response">                           
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_doe()){?>
@@ -624,7 +624,7 @@ a {
                                                             <label><input type="radio" name="doe" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Orthopnea"}:</td>
+			<td class="response_prompt"><?php echo xl("Orthopnea");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_orthopnea()){?>
@@ -635,7 +635,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Peripheral"}:</td>
+			<td class="response_prompt"><?php echo xl("Peripheral");?>:</td>
 			<td class="response">                                
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_peripheal()){?>
@@ -644,7 +644,7 @@ a {
                                                             <label><input type="radio" name="peripheal" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Edema"}:</td>
+			<td class="response_prompt"><?php echo xl("Edema");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_edema()){?>
@@ -653,7 +653,7 @@ a {
                                                             <label><input type="radio" name="edema" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Leg Pain/Cramping"}:</td>
+			<td class="response_prompt"><?php echo xl("Leg Pain/Cramping");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_legpain_cramping()){?>
@@ -664,7 +664,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="History of Heart Murmur"}:</td>
+			<td class="response_prompt"><?php echo xl("History of Heart Murmur");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_history_murmur()){?>
@@ -673,7 +673,7 @@ a {
                                                             <label><input type="radio" name="history_murmur" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Arrythmia"}:</td>
+			<td class="response_prompt"><?php echo xl("Arrythmia");?>:</td>
 			<td class="response">                            
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_arrythmia()){?>
@@ -682,7 +682,7 @@ a {
                                                             <label><input type="radio" name="arrythmia" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Heart Problem"}:</td>
+			<td class="response_prompt"><?php echo xl("Heart Problem");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_heart_problem()){?>
@@ -701,9 +701,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Gastrointestinal"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Gastrointestinal");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Dysphagia"}:</td>
+			<td class="response_prompt"><?php echo xl("Dysphagia");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_dysphagia()){?>
@@ -712,7 +712,7 @@ a {
                                                             <label><input type="radio" name="dysphagia" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Heartburn"}:</td>
+			<td class="response_prompt"><?php echo xl("Heartburn");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_heartburn()){?>
@@ -721,7 +721,7 @@ a {
                                                             <label><input type="radio" name="heartburn" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Bloating"}:</td>
+			<td class="response_prompt"><?php echo xl("Bloating");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_bloating()){?>
@@ -732,7 +732,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Belching"}:</td>
+			<td class="response_prompt"><?php echo xl("Belching");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_belching()){?>
@@ -741,7 +741,7 @@ a {
                                                             <label><input type="radio" name="belching" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Flatulence"}:</td>
+			<td class="response_prompt"><?php echo xl("Flatulence");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_flatulence()){?>
@@ -750,7 +750,7 @@ a {
                                                             <label><input type="radio" name="flatulence" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Nausea"}:</td>
+			<td class="response_prompt"><?php echo xl("Nausea");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_nausea()){?>
@@ -761,7 +761,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Vomiting"}:</td>
+			<td class="response_prompt"><?php echo xl("Vomiting");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_vomiting()){?>
@@ -770,7 +770,7 @@ a {
                                                             <label><input type="radio" name="vomiting" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Hematemesis"}:</td>
+			<td class="response_prompt"><?php echo xl("Hematemesis");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hematemesis()){?>
@@ -779,7 +779,7 @@ a {
                                                             <label><input type="radio" name="hematemesis" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Pain"}:</td>
+			<td class="response_prompt"><?php echo xl("Pain");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_gastro_pain()){?>
@@ -790,7 +790,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Food Intolerance"}:</td>
+			<td class="response_prompt"><?php echo xl("Food Intolerance");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_food_intolerance()){?>
@@ -799,7 +799,7 @@ a {
                                                             <label><input type="radio" name="food_intolerance" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="H/O Hepatitis"}:</td>
+			<td class="response_prompt"><?php echo xl("H/O Hepatitis");?>:</td>
 			<td class="response">                          
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hepatitis()){?>
@@ -808,7 +808,7 @@ a {
                                                             <label><input type="radio" name="hepatitis" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Jaundice"}:</td>
+			<td class="response_prompt"><?php echo xl("Jaundice");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_jaundice()){?>
@@ -819,7 +819,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Hematochezia"}:</td>
+			<td class="response_prompt"><?php echo xl("Hematochezia");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hematochezia()){?>
@@ -828,7 +828,7 @@ a {
                                                             <label><input type="radio" name="hematochezia" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Changed Bowel"}:</td>
+			<td class="response_prompt"><?php echo xl("Changed Bowel");?>:</td>
 			<td class="response">                           
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_changed_bowel()){?>
@@ -837,7 +837,7 @@ a {
                                                             <label><input type="radio" name="changed_bowel" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Diarrhea"}:</td>
+			<td class="response_prompt"><?php echo xl("Diarrhea");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_copd()){?>
@@ -848,7 +848,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Constipation"}:</td>
+			<td class="response_prompt"><?php echo xl("Constipation");?>:</td>
 			<td class="response">                           
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_constipation()){?>
@@ -867,9 +867,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Genitourinary"} {xl t="General"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Genitourinary");?> <?php echo xl("General");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Polyuria"}:</td>
+			<td class="response_prompt"><?php echo xl("Polyuria");?>:</td>
 			<td class="response">                           
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_polyuria()){?>
@@ -878,7 +878,7 @@ a {
                                                             <label><input type="radio" name="polyuria" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Polydypsia"}:</td>
+			<td class="response_prompt"><?php echo xl("Polydypsia");?>:</td>
 			<td class="response">                            
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_polydypsia()){?>
@@ -887,7 +887,7 @@ a {
                                                             <label><input type="radio" name="polydypsia" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Dysuria"}:</td>
+			<td class="response_prompt"><?php echo xl("Dysuria");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_dysuria()){?>
@@ -898,7 +898,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Hematuria"}:</td>
+			<td class="response_prompt"><?php echo xl("Hematuria");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hematuria()){?>
@@ -907,7 +907,7 @@ a {
                                                             <label><input type="radio" name="hematuria" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Frequency"}:</td>
+			<td class="response_prompt"><?php echo xl("Frequency");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_copd()){?>
@@ -916,7 +916,7 @@ a {
                                                             <label><input type="radio" name="frequency" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Urgency"}:</td>
+			<td class="response_prompt"><?php echo xl("Urgency");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_urgency()){?>
@@ -927,7 +927,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Incontinence"}:</td>
+			<td class="response_prompt"><?php echo xl("Incontinence");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_incontinence()){?>
@@ -936,7 +936,7 @@ a {
                                                             <label><input type="radio" name="incontinence" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Renal Stones"}:</td>
+			<td class="response_prompt"><?php echo xl("Renal Stones");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_renal_stones()){?>
@@ -945,7 +945,7 @@ a {
                                                             <label><input type="radio" name="renal_stones" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="UTIs"}:</td>
+			<td class="response_prompt"><?php echo xl("UTIs");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_utis()){?>
@@ -965,9 +965,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Genitourinary"} {xl t="Male"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Genitourinary");?> <?php echo xl("Male");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Hesitancy"}:</td>
+			<td class="response_prompt"><?php echo xl("Hesitancy");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hesitancy()){?>
@@ -977,7 +977,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Dribbling"}:</td>
+			<td class="response_prompt"><?php echo xl("Dribbling");?>:</td>
 			<td class="response">                            
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_dribbling()){?>
@@ -987,7 +987,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Stream"}:</td>
+			<td class="response_prompt"><?php echo xl("Stream");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_stream()){?>
@@ -999,7 +999,7 @@ a {
                                                         </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Nocturia"}:</td>
+			<td class="response_prompt"><?php echo xl("Nocturia");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_nocturia()){?>
@@ -1009,7 +1009,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Erections"}:</td>
+			<td class="response_prompt"><?php echo xl("Erections");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_erections()){?>
@@ -1019,7 +1019,7 @@ a {
                                                          <?php }
                                                          }?>
                                                           </td>
-			<td class="response_prompt">{xl t="Ejaculations"}:</td>
+			<td class="response_prompt"><?php echo xl("Ejaculations");?>:</td>
 			<td class="response">
                                                          <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_ejaculations()){?>
@@ -1037,9 +1037,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Genitourinary"} {xl t="Female"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Genitourinary");?> <?php echo xl("Female");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Female G"}:</td>
+			<td class="response_prompt"><?php echo xl("Female G");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_g()){?>
@@ -1049,7 +1049,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Female P"}:</td>
+			<td class="response_prompt"><?php echo xl("Female P");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_p()){?>
@@ -1059,7 +1059,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Female AP"}:</td>
+			<td class="response_prompt"><?php echo xl("Female AP");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_ap()){?>
@@ -1071,7 +1071,7 @@ a {
                                                             </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Female LC"}:</td>
+			<td class="response_prompt"><?php echo xl("Female LC");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_lc()){?>
@@ -1081,7 +1081,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Menarche"}:</td>
+			<td class="response_prompt"><?php echo xl("Menarche");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_mearche()){?>
@@ -1091,7 +1091,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Menopause"}:</td>
+			<td class="response_prompt"><?php echo xl("Menopause");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_menopause()){?>
@@ -1103,7 +1103,7 @@ a {
                                                         </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="LMP"}:</td>
+			<td class="response_prompt"><?php echo xl("LMP");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_lmp()){?>
@@ -1113,7 +1113,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Frequency"}:</td>
+			<td class="response_prompt"><?php echo xl("Frequency");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_f_frequency()){?>
@@ -1123,7 +1123,7 @@ a {
                                                          <?php }
                                                          }?>
                                                          </td>
-			<td class="response_prompt">{xl t="Flow"}:</td>
+			<td class="response_prompt"><?php echo xl("Flow");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_f_flow()){?>
@@ -1135,7 +1135,7 @@ a {
                                                         </td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Symptoms"}:</td>
+			<td class="response_prompt"><?php echo xl("Symptoms");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_f_symptoms()){?>
@@ -1145,7 +1145,7 @@ a {
                                                          <?php }
                                                          }?>
                                                         </td>
-			<td class="response_prompt">{xl t="Abnormal Hair Growth"}:</td>
+			<td class="response_prompt"><?php echo xl("Abnormal Hair Growth");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_abnormal_hair_growth()){?>
@@ -1155,7 +1155,7 @@ a {
                                                          <?php }
                                                          }?>
                                                             </td>
-			<td class="response_prompt">{xl t="F/H Female Hirsutism/Striae"}:</td>
+			<td class="response_prompt"><?php echo xl("F/H Female Hirsutism/Striae");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_f_hirsutism()){?>
@@ -1171,9 +1171,9 @@ a {
 </tr></table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Musculoskeletal"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Musculoskeletal");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Chronic Joint Pain"}:</td>
+			<td class="response_prompt"><?php echo xl("Chronic Joint Pain");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_joint_pain()){?>
@@ -1182,7 +1182,7 @@ a {
                                                             <label><input type="radio" name="joint_pain" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Swelling"}:</td>
+			<td class="response_prompt"><?php echo xl("Swelling");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_swelling()){?>
@@ -1191,7 +1191,7 @@ a {
                                                             <label><input type="radio" name="swelling" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Redness"}:</td>
+			<td class="response_prompt"><?php echo xl("Redness");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_m_redness()){?>
@@ -1202,7 +1202,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Warm"}:</td>
+			<td class="response_prompt"><?php echo xl("Warm");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_m_warm()){?>
@@ -1211,7 +1211,7 @@ a {
                                                             <label><input type="radio" name="m_warm" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Stiffness"}:</td>
+			<td class="response_prompt"><?php echo xl("Stiffness");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_m_stiffness()){?>
@@ -1220,7 +1220,7 @@ a {
                                                             <label><input type="radio" name="m_stiffness" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Muscle"}:</td>
+			<td class="response_prompt"><?php echo xl("Muscle");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_muscle()){?>
@@ -1231,7 +1231,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Aches"}:</td>
+			<td class="response_prompt"><?php echo xl("Aches");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_m_aches()){?>
@@ -1240,7 +1240,7 @@ a {
                                                             <label><input type="radio" name="m_aches" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="FMS"}:</td>
+			<td class="response_prompt"><?php echo xl("FMS");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_fms()){?>
@@ -1249,7 +1249,7 @@ a {
                                                             <label><input type="radio" name="fms" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Arthritis"}:</td>
+			<td class="response_prompt"><?php echo xl("Arthritis");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_arthritis()){?>
@@ -1266,9 +1266,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Neurologic"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Neurologic");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="LOC"}:</td>
+			<td class="response_prompt"><?php echo xl("LOC");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_loc()){?>
@@ -1277,7 +1277,7 @@ a {
                                                             <label><input type="radio" name="loc" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Seizures"}:</td>
+			<td class="response_prompt"><?php echo xl("Seizures");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_seizures()){?>
@@ -1286,7 +1286,7 @@ a {
                                                             <label><input type="radio" name="seizures" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Stroke"}:</td>
+			<td class="response_prompt"><?php echo xl("Stroke");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_stroke()){?>
@@ -1297,7 +1297,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="TIA"}:</td>
+			<td class="response_prompt"><?php echo xl("TIA");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_tia()){?>
@@ -1306,7 +1306,7 @@ a {
                                                             <label><input type="radio" name="tia" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Numbness"}:</td>
+			<td class="response_prompt"><?php echo xl("Numbness");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_n_numbness()){?>
@@ -1315,7 +1315,7 @@ a {
                                                             <label><input type="radio" name="n_numbness" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Weakness"}:</td>
+			<td class="response_prompt"><?php echo xl("Weakness");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_n_weakness()){?>
@@ -1326,7 +1326,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Paralysis"}:</td>
+			<td class="response_prompt"><?php echo xl("Paralysis");?>:</td>
 			<td class="response">
                                                     <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_paralysis()){?>
@@ -1335,7 +1335,7 @@ a {
                                                             <label><input type="radio" name="paralysis" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Intellectual Decline"}:</td>
+			<td class="response_prompt"><?php echo xl("Intellectual Decline");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_intellectual_decline()){?>
@@ -1344,7 +1344,7 @@ a {
                                                             <label><input type="radio" name="intellectual_decline" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Memory Problems"}:</td>
+			<td class="response_prompt"><?php echo xl("Memory Problems");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_memory_problems()){?>
@@ -1355,7 +1355,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Dementia"}:</td>
+			<td class="response_prompt"><?php echo xl("Dementia");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_dementia()){?>
@@ -1364,7 +1364,7 @@ a {
                                                             <label><input type="radio" name="dementia" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Headache"}:</td>
+			<td class="response_prompt"><?php echo xl("Headache");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_n_headache()){?>
@@ -1381,9 +1381,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Skin"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Skin");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Cancer"}:</td>
+			<td class="response_prompt"><?php echo xl("Cancer");?>:</td>
 			<td class="response">
                                                     <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_s_cancer()){?>
@@ -1392,7 +1392,7 @@ a {
                                                             <label><input type="radio" name="s_cancer" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Psoriasis"}:</td>
+			<td class="response_prompt"><?php echo xl("Psoriasis");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_psoriasis()){?>
@@ -1401,7 +1401,7 @@ a {
                                                             <label><input type="radio" name="psoriasis" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Acne"}:</td>
+			<td class="response_prompt"><?php echo xl("Acne");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_s_acne()){?>
@@ -1412,7 +1412,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Other"}:</td>
+			<td class="response_prompt"><?php echo xl("Other");?>:</td>
 			<td class="response">
                                                     <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_s_other()){?>
@@ -1421,7 +1421,7 @@ a {
                                                             <label><input type="radio" name="s_other" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Disease"}:</td>
+			<td class="response_prompt"><?php echo xl("Disease");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_s_disease()){?>
@@ -1438,9 +1438,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Psychiatric"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Psychiatric");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Psychiatric Diagnosis"}:</td>
+			<td class="response_prompt"><?php echo xl("Psychiatric Diagnosis");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_p_diagnosis()){?>
@@ -1449,7 +1449,7 @@ a {
                                                             <label><input type="radio" name="p_diagnosis" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Psychiatric Medication"}:</td>
+			<td class="response_prompt"><?php echo xl("Psychiatric Medication");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_p_medication()){?>
@@ -1458,7 +1458,7 @@ a {
                                                             <label><input type="radio" name="p_medication" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Depression"}:</td>
+			<td class="response_prompt"><?php echo xl("Depression");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_depression()){?>
@@ -1469,7 +1469,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Anxiety"}:</td>
+			<td class="response_prompt"><?php echo xl("Anxiety");?>:</td>
 			<td class="response">
                                                             <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_anxiety()){?>
@@ -1478,7 +1478,7 @@ a {
                                                             <label><input type="radio" name="anxiety" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Social Difficulties"}:</td>
+			<td class="response_prompt"><?php echo xl("Social Difficulties");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_social_difficulties()){?>
@@ -1495,9 +1495,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Endocrine"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Endocrine");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Thyroid Problems"}:</td>
+			<td class="response_prompt"><?php echo xl("Thyroid Problems");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_thyroid_problems()){?>
@@ -1506,7 +1506,7 @@ a {
                                                             <label><input type="radio" name="thyroid_problems" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Diabetes"}:</td>
+			<td class="response_prompt"><?php echo xl("Diabetes");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_diabetes()){?>
@@ -1515,7 +1515,7 @@ a {
                                                             <label><input type="radio" name="diabetes" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Abnormal Blood Test"}:</td>
+			<td class="response_prompt"><?php echo xl("Abnormal Blood Test");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_abnormal_blood()){?>
@@ -1532,9 +1532,9 @@ a {
 	</table></td>
 </tr>
 <tr>
-	<td><table><td class ="responsetd"><span class="section_title">{xl t="Hematologic"}/{xl t="Allergic"}/{xl t="Immunologic"}</span><table>
+	<td><table><td class ="responsetd"><span class="section_title"><?php echo xl("Hematologic");?>/<?php echo xl("Allergic");?>/<?php echo xl("Immunologic");?></span><table>
 		<tr>
-			<td class="response_prompt">{xl t="Anemia"}:</td>
+			<td class="response_prompt"><?php echo xl("Anemia");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_anemia()){?>
@@ -1543,7 +1543,7 @@ a {
                                                             <label><input type="radio" name="anemia" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="F/H Blood Problems"}:</td>
+			<td class="response_prompt"><?php echo xl("F/H Blood Problems");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_s_acne()){?>
@@ -1552,7 +1552,7 @@ a {
                                                             <label><input type="radio" name="fh_blood_problems" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Bleeding Problems"}:</td>
+			<td class="response_prompt"><?php echo xl("Bleeding Problems");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_bleeding_problems()){?>
@@ -1563,7 +1563,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="Allergies"}:</td>
+			<td class="response_prompt"><?php echo xl("Allergies");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_allergies()){?>
@@ -1572,7 +1572,7 @@ a {
                                                             <label><input type="radio" name="allergies" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="Frequent Illness"}:</td>
+			<td class="response_prompt"><?php echo xl("Frequent Illness");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_frequent_illness()){?>
@@ -1581,7 +1581,7 @@ a {
                                                             <label><input type="radio" name="frequent_illness" value="<?php echo $value;?>"/><?php echo $value;?></label>
                                                          <?php }
                                                          }?></td>
-			<td class="response_prompt">{xl t="HIV"}:</td>
+			<td class="response_prompt"><?php echo xl("HIV");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hiv()){?>
@@ -1592,7 +1592,7 @@ a {
                                                          }?></td>
 		</tr>
 		<tr>
-			<td class="response_prompt">{xl t="HAI Status"}:</td>
+			<td class="response_prompt"><?php echo xl("HAI Status");?>:</td>
 			<td class="response">
                                                         <?php foreach ($this->form->get_options() as $value) {
                                                           if($value==$this->form->get_hai_status()){?>
@@ -1611,17 +1611,17 @@ a {
 
 <tr>
 <td>
-	<input type="hidden" name="id" value="{$this->form->get_id()}" />
-	<input type="hidden" name="pid" value="{$this->form->get_pid()}" />
+	<input type="hidden" name="id" value="<?php echo $this->form->get_id();?>" />
+	<input type="hidden" name="pid" value="<?php echo $this->form->get_pid();?>" />
 	<input type="hidden" name="process" value="true" />
 </td>
 </tr>
 <tr>
 <td>
-	<input type="submit" name="Submit" value={php} xl('Save Form','e','"','"'); {/php}>
+	<input type="submit" name="Submit" value=<?php echo  xl('Save Form','e','"','"'); ?>>
 </td>
 <td>
-	<a href="{$DONT_SAVE_LINK}" class="link" onclick="top.restoreSession()">[{php} xl("Don't Save","e"); {/php}]</a>
+	<a href="<?php echo $this->dont_save_link;?>" class="link" onclick="top.restoreSession()">[<?php xl("Don't Save","e"); ?>]</a>
 </td>
 </tr>
 </table>
