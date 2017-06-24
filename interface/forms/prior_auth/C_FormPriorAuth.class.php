@@ -7,21 +7,33 @@ require_once("FormPriorAuth.class.php");
 class C_FormPriorAuth extends Controller {
 
 	var $template_dir;
+                   var $form_action;
+                   var $dont_save_link;
+                    var $style;
+                    var $prior_auth;
+                    var $view;                    
 	
     function __construct($template_mod = "general") {
     	parent::__construct();
     	$returnurl = $GLOBALS['concurrent_layout'] ? 'encounter_top.php' : 'patient_encounter.php';
     	$this->template_mod = $template_mod;
     	$this->template_dir = dirname(__FILE__) . "/templates/prior_auth/";
-    	$this->assign("FORM_ACTION", $GLOBALS['web_root']);
-    	$this->assign("DONT_SAVE_LINK",$GLOBALS['webroot'] . "/interface/patient_file/encounter/$returnurl");
-    	$this->assign("STYLE", $GLOBALS['style']);
+    	
+                    $this->form_action = $GLOBALS['web_root'];
+                    $this->dont_save_link = $GLOBALS['webroot'] . "/interface/patient_file/encounter/$returnurl";
+                    $this->style =  $GLOBALS['style'];
     }
     
     function default_action() {
     	$prior_auth = new FormPriorAuth();
-    	$this->assign("prior_auth",$prior_auth);
-		return $this->fetch($this->template_dir . $this->template_mod . "_new.html");
+    	
+                    ob_start(); //Start output Buffer
+                    require_once($this->template_dir . $this->template_mod . "_new.php");
+                    $echoed_content = ob_get_clean(); // gets content, discards buffer
+                    return $echoed_content;
+                    
+                    $this->prior_auth = $prior_auth;
+                   
 	}
 	
 	function view_action($form_id) {
@@ -31,9 +43,13 @@ class C_FormPriorAuth extends Controller {
     	else {
     		$prior_auth = new FormPriorAuth();
     	}
-    	$this->assign("VIEW",true);
-    	$this->assign("prior_auth",$prior_auth);
-		return $this->fetch($this->template_dir . $this->template_mod . "_new.html");
+    	
+                    $this->view = true;
+                    $this->prior_auth = $prior_auth;
+                     ob_start(); //Start output Buffer
+                    require_once($this->template_dir . $this->template_mod . "_new.php");
+                    $echoed_content = ob_get_clean(); // gets content, discards buffer
+                    return $echoed_content;                    
 
 	}
 	
